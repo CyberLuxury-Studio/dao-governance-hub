@@ -2,72 +2,81 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0D0E15] text-[#e3e1ec] flex font-inter">
-      {/* Sidebar */}
-      <aside className="w-64 border-r border-[#3a4a49]/30 bg-[#0d0e15] p-6 hidden md:block">
-        <div className="font-space-grotesk text-2xl font-bold text-[#00FFFF] mb-12 tracking-widest">DAO_HUB</div>
-        <nav className="space-y-4">
-          <a href="#" className="flex items-center gap-3 text-[#00FFFF] border-r-2 border-[#00FFFF] pr-2"><span className="uppercase tracking-widest text-sm">Proposals</span></a>
-          <a href="#" className="flex items-center gap-3 text-[#b9cac9] hover:text-[#e3e1ec] transition-colors"><span className="uppercase tracking-widest text-sm">Treasury</span></a>
-          <a href="#" className="flex items-center gap-3 text-[#b9cac9] hover:text-[#e3e1ec] transition-colors"><span className="uppercase tracking-widest text-sm">Members</span></a>
-        </nav>
-      </aside>
-
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col h-screen overflow-y-auto p-8">
-        {/* Treasury Widget */}
-        <section className="mb-12 border-b border-[#3a4a49]/30 pb-8">
-          <p className="font-space-grotesk text-[#b9cac9] uppercase tracking-[0.2em] text-xs mb-2">Total Treasury Balance</p>
-          <div className="font-space-grotesk text-6xl text-[#00FFFF] font-bold drop-shadow-[0_0_20px_rgba(0,255,255,0.4)]">
-            4,500,000<span className="text-2xl text-[#e3e1ec] ml-2 font-light">.00</span>
+    <main className="min-h-screen bg-[#050505] text-[#e5e2e1] font-inter">
+      {/* Dynamic Header based on repo name */}
+      <nav className="fixed w-full z-50 bg-[#050505]/90 backdrop-blur-md border-b border-[#3b4b37]/30">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="font-space-grotesk text-2xl font-bold tracking-widest text-[#00FF41] uppercase">dao_PROT</div>
+          <div className="hidden md:flex gap-8 font-space-grotesk text-sm uppercase tracking-widest text-[#84967e]">
+            <a href="#features" className="hover:text-[#00FF41]">Features</a>
+            <a href="#pricing" className="hover:text-[#00FF41]">Pricing</a>
+            <a href="#docs" className="hover:text-[#00FF41]">Docs</a>
           </div>
-        </section>
-
-        {/* Proposals Grid */}
-        <div className="flex justify-between items-end mb-6">
-          <h2 className="font-space-grotesk text-2xl uppercase tracking-widest">Active Proposals</h2>
-          <button className="px-6 py-2 bg-[#00FFFF] text-[#003737] font-space-grotesk font-bold uppercase tracking-widest hover:shadow-[0_0_15px_#00FFFF] transition-all">New Proposal</button>
+          <button className="px-6 py-2 border border-[#00FF41] text-[#00FF41] font-mono text-sm hover:bg-[#00FF41] hover:text-[#050505] transition-colors">
+            INITIATE
+          </button>
         </div>
+      </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Card 1 */}
-          <div className="bg-[#1a1b22]/60 backdrop-blur-xl border border-[#3a4a49]/30 p-6 relative group hover:bg-[#292931]/60 transition-all">
-            <div className="flex justify-between items-start mb-4">
-              <span className="px-3 py-1 bg-[#00FFFF]/10 text-[#00FFFF] border border-[#00FFFF]/50 text-xs font-space-grotesk uppercase tracking-widest">Active</span>
-              <span className="text-[#b9cac9] text-xs font-mono">ID: #0042</span>
-            </div>
-            <h3 className="font-space-grotesk text-xl mb-6 pr-4">Allocate 5M USDC to Liquidity Provisioning on Curve</h3>
-            
-            <div className="space-y-4">
-              <div>
-                <div className="flex justify-between text-xs font-space-grotesk mb-1"><span className="text-[#00FFFF]">FOR</span><span>78%</span></div>
-                <div className="h-1 w-full bg-[#0d0e15]"><div className="h-full bg-[#00FFFF] shadow-[0_0_10px_#00FFFF]" style={{width: '78%'}}></div></div>
+      {/* Hero */}
+      <section className="pt-40 pb-32 px-6 flex flex-col items-center justify-center text-center min-h-[80vh]">
+         <div className="inline-block px-3 py-1 bg-[#131313] border border-[#3b4b37] text-[#84967e] font-mono text-xs mb-8">SYSTEM_STATUS: SECURE</div>
+         <h1 className="text-5xl md:text-7xl font-space-grotesk font-bold tracking-tighter mb-6 uppercase">
+           THE ULTIMATE <br/><span className="text-[#00FF41] underline decoration-[#FF003C] underline-offset-8 decoration-4">dao governance hub</span>
+         </h1>
+         <p className="text-lg text-[#84967e] max-w-2xl mb-12">
+           Build a DAO voting platform. Feature glassmorphic proposal cards, voting percentage bars, and a treasury balance widget.
+         </p>
+         <button className="px-12 py-4 bg-[#00FF41] text-[#003907] font-space-grotesk font-bold uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,255,65,0.4)]">
+           LAUNCH TERMINAL
+         </button>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="py-32 bg-[#0e0e0e] px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-space-grotesk font-bold uppercase tracking-widest mb-16 text-[#00FF41] border-b border-[#3b4b37]/30 pb-4">Core Architecture</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="bg-[#131313] p-8 border border-[#3b4b37]/30 hover:border-[#00FF41]/50 transition-colors">
+                <div className="text-3xl font-mono text-[#FF003C] mb-6">0{i}</div>
+                <h3 className="text-xl font-space-grotesk uppercase tracking-widest mb-4">Module {i}</h3>
+                <p className="text-[#84967e] text-sm">High-performance components designed for extreme data density and rapid execution. No bloated code. Just pure function.</p>
               </div>
-              <div>
-                <div className="flex justify-between text-xs font-space-grotesk mb-1"><span className="text-[#ffb4ab]">AGAINST</span><span>22%</span></div>
-                <div className="h-1 w-full bg-[#0d0e15]"><div className="h-full bg-[#93000a]" style={{width: '22%'}}></div></div>
-              </div>
-            </div>
+            ))}
           </div>
-
-          {/* Card 2 */}
-          <div className="bg-[#1a1b22]/60 backdrop-blur-xl border border-[#3a4a49]/30 p-6 relative group hover:bg-[#292931]/60 transition-all">
-            <div className="flex justify-between items-start mb-4">
-              <span className="px-3 py-1 bg-[#3a4a49]/30 text-[#b9cac9] text-xs font-space-grotesk uppercase tracking-widest">Closed</span>
-              <span className="text-[#b9cac9] text-xs font-mono">ID: #0041</span>
-            </div>
-            <h3 className="font-space-grotesk text-xl mb-6 pr-4">Update Core Protocol Reward Emission Schedule</h3>
-            
-            <div className="space-y-4 opacity-50">
-              <div>
-                <div className="flex justify-between text-xs font-space-grotesk mb-1"><span className="text-[#00FFFF]">FOR</span><span>92%</span></div>
-                <div className="h-1 w-full bg-[#0d0e15]"><div className="h-full bg-[#00FFFF]" style={{width: '92%'}}></div></div>
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="py-32 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="p-10 border border-[#3b4b37]/50 bg-[#0e0e0e]">
+            <h3 className="text-2xl font-space-grotesk uppercase tracking-widest mb-2 text-[#84967e]">Base Node</h3>
+            <div className="text-4xl font-mono mb-8 text-[#e5e2e1]">./process_batch1_landing.sh / mo</div>
+            <button className="w-full py-3 border border-[#84967e] text-[#84967e] font-mono text-sm uppercase mb-8 hover:bg-[#84967e] hover:text-[#050505]">Deploy Base</button>
+            <ul className="space-y-4 font-mono text-sm text-[#84967e]">
+              <li>+ Standard API Limits</li>
+              <li>+ Community Support</li>
+            </ul>
+          </div>
+          <div className="p-10 border border-[#00FF41] bg-[#131313] shadow-[0_0_30px_rgba(0,255,65,0.05)]">
+            <h3 className="text-2xl font-space-grotesk uppercase tracking-widest mb-2 text-[#00FF41]">Quantum Node</h3>
+            <div className="text-4xl font-mono mb-8 text-[#e5e2e1]">9 / mo</div>
+            <button className="w-full py-3 bg-[#00FF41] text-[#003907] font-mono font-bold text-sm uppercase mb-8 hover:bg-white">Deploy Quantum</button>
+            <ul className="space-y-4 font-mono text-sm text-[#e5e2e1]">
+              <li className="text-[#00FF41]">+ Unlimited API Calls</li>
+              <li>+ Dedicated SLA</li>
+              <li>+ Custom Integrations</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      {/* Footer */}
+      <footer className="py-12 border-t border-[#3b4b37]/30 text-center font-mono text-xs text-[#84967e]">
+        <p>END OF FILE. dao-governance-hub © 2024</p>
+      </footer>
     </main>
   );
 }
